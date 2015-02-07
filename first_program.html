@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      Red, White, or Blue --- Guessing Game
+    </title>
+  </head>
+  <body>
+    <img id="image1" src="http://i.imgur.com/DRekSWS.png" width="75%" height="75%" >
+    <script>
+      document.getElementById("image1").addEventListener("load", function() {
+        var guess, answer, answerColor, message;
+        answer = Math.ceil(Math.random() * 3);
+
+        if (answer == 1) {
+          answerColor = "red";
+        }
+        else if(answer == 2){
+          answerColor = "white";
+        }
+        else {
+          answerColor = "blue";
+        }
+
+        guess = prompt("I'm thinking of a color on the American flag. Can you guess which one?").toLowerCase();
+
+        while (guess != answerColor) {
+          guess = prompt("Keep guessing, idiot!");
+        };
+
+        message = "You finally got it right. The answer was " + answerColor;
+        alert (message);
+      });
+    </script>
+  </body>
+</html>
